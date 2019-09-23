@@ -1,0 +1,365 @@
+----- 1. Ping -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> ping google.co.id
+
+Pinging google.co.id [216.239.38.120] with 32 bytes of data:
+Reply from 216.239.38.120: bytes=32 time=31ms TTL=51
+Reply from 216.239.38.120: bytes=32 time=31ms TTL=51
+Reply from 216.239.38.120: bytes=32 time=30ms TTL=51
+Reply from 216.239.38.120: bytes=32 time=39ms TTL=51
+
+Ping statistics for 216.239.38.120:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 30ms, Maximum = 39ms, Average = 32ms
+	
+----- 2. Netstat ----- 
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> netstat
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State
+  TCP    127.0.0.1:9221         E5-475G:14599          ESTABLISHED
+  TCP    127.0.0.1:9234         E5-475G:26887          ESTABLISHED
+  TCP    127.0.0.1:9320         E5-475G:26887          ESTABLISHED
+  TCP    127.0.0.1:14599        E5-475G:9221           ESTABLISHED
+  TCP    127.0.0.1:26887        E5-475G:9234           ESTABLISHED
+  TCP    127.0.0.1:26887        E5-475G:9320           ESTABLISHED
+  TCP    192.168.1.23:1121      a184-26-194-101:https  ESTABLISHED
+  TCP    192.168.1.23:1329      lb-140-82-113-26-iad:https  ESTABLISHED
+  
+----- 3. ARP -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> ARP
+
+Displays and modifies the IP-to-Physical address translation tables used by
+address resolution protocol (ARP).
+
+ARP -s inet_addr eth_addr [if_addr]
+ARP -d inet_addr [if_addr]
+ARP -a [inet_addr] [-N if_addr] [-v]
+
+  -a            Displays current ARP entries by interrogating the current
+                protocol data.  If inet_addr is specified, the IP and Physical
+                addresses for only the specified computer are displayed.  If
+                more than one network interface uses ARP, entries for each ARP
+                table are displayed.
+  -g            Same as -a.
+  -v            Displays current ARP entries in verbose mode.  All invalid
+                entries and entries on the loop-back interface will be shown.
+  inet_addr     Specifies an internet address.
+  -N if_addr    Displays the ARP entries for the network interface specified
+                by if_addr.
+  -d            Deletes the host specified by inet_addr. inet_addr may be
+                wildcarded with * to delete all hosts.
+  -s            Adds the host and associates the Internet address inet_addr
+                with the Physical address eth_addr.  The Physical address is
+                given as 6 hexadecimal bytes separated by hyphens. The entry
+                is permanent.
+  eth_addr      Specifies a physical address.
+  if_addr       If present, this specifies the Internet address of the
+                interface whose address translation table should be modified.
+                If not present, the first applicable interface will be used.
+Example:
+  > arp -s 157.55.85.212   00-aa-00-62-c6-09  .... Adds a static entry.
+  > arp -a                                    .... Displays the arp table.
+  
+----- 4. nbtstat -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> NbtStat
+
+Displays protocol statistics and current TCP/IP connections using NBT
+(NetBIOS over TCP/IP).
+
+NBTSTAT [ [-a RemoteName] [-A IP address] [-c] [-n]
+        [-r] [-R] [-RR] [-s] [-S] [interval] ]
+
+  -a   (adapter status) Lists the remote machine's name table given its name
+  -A   (Adapter status) Lists the remote machine's name table given its
+                        IP address.
+  -c   (cache)          Lists NBT's cache of remote [machine] names and their IP addresses
+  -n   (names)          Lists local NetBIOS names.
+  -r   (resolved)       Lists names resolved by broadcast and via WINS
+  -R   (Reload)         Purges and reloads the remote cache name table
+  -S   (Sessions)       Lists sessions table with the destination IP addresses
+  -s   (sessions)       Lists sessions table converting destination IP
+                        addresses to computer NETBIOS names.
+  -RR  (ReleaseRefresh) Sends Name Release packets to WINS and then, starts Refresh
+
+  RemoteName   Remote host machine name.
+  IP address   Dotted decimal representation of the IP address.
+  interval     Redisplays selected statistics, pausing interval seconds
+               between each display. Press Ctrl+C to stop redisplaying
+               statistics.
+			   
+----- 5. tracert -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> tracert
+
+Usage: tracert [-d] [-h maximum_hops] [-j host-list] [-w timeout]
+               [-R] [-S srcaddr] [-4] [-6] target_name
+
+Options:
+    -d                 Do not resolve addresses to hostnames.
+    -h maximum_hops    Maximum number of hops to search for target.
+    -j host-list       Loose source route along host-list (IPv4-only).
+    -w timeout         Wait timeout milliseconds for each reply.
+    -R                 Trace round-trip path (IPv6-only).
+    -S srcaddr         Source address to use (IPv6-only).
+    -4                 Force using IPv4.
+    -6                 Force using IPv6.
+	
+----- 6. ipconfig ------
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Ethernet adapter VirtualBox Host-Only Network #4:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::91d7:eb93:6f91:14a%24
+   IPv4 Address. . . . . . . . . . . : 192.168.56.1
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Ethernet adapter VirtualBox Host-Only Network #5:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::25ed:5689:ac34:d806%32
+   IPv4 Address. . . . . . . . . . . : 192.168.181.2
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . :
+
+Wireless LAN adapter Local Area Connection* 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter Local Area Connection* 14:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+
+Wireless LAN adapter WiFi:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::d502:52a:82d2:f80f%11
+   IPv4 Address. . . . . . . . . . . : 192.168.1.23
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : fe80::1%11
+                                       192.168.1.1
+
+Ethernet adapter Bluetooth Network Connection 3:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . :
+   
+----- 7. systeminfo -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> systeminfo
+
+Host Name:                 E5-475G
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.17134 N/A Build 17134
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          Windows User
+Registered Organization:
+Product ID:                00330-80000-00000-AA196
+Original Install Date:     5/22/2018, 1:29:59 AM
+System Boot Time:          9/18/2019, 9:06:53 AM
+System Manufacturer:       Acer
+System Model:              Aspire E5-475G
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: Intel64 Family 6 Model 142 Stepping 9 GenuineIntel ~2511 Mhz
+BIOS Version:              Insyde Corp. V1.21, 11/6/2017
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume5
+System Locale:             en-gb;English (United Kingdom)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC+07:00) Bangkok, Hanoi, Jakarta
+Total Physical Memory:     12,156 MB
+Available Physical Memory: 7,667 MB
+Virtual Memory: Max Size:  16,444 MB
+Virtual Memory: Available: 11,369 MB
+Virtual Memory: In Use:    5,075 MB
+Page File Location(s):     C:\pagefile.sys
+                           D:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\E5-475G
+Hotfix(s):                 14 Hotfix(s) Installed.
+                           [01]: KB4514357
+                           [02]: KB4343669
+                           [03]: KB4346084
+                           [04]: KB4456655
+                           [05]: KB4465663
+                           [06]: KB4477137
+                           [07]: KB4485449
+                           [08]: KB4486153
+                           [09]: KB4497398
+                           [10]: KB4503308
+                           [11]: KB4509094
+                           [12]: KB4512576
+                           [13]: KB4516115
+                           [14]: KB4516058
+Network Card(s):           5 NIC(s) Installed.
+                           [01]: Qualcomm Atheros QCA9377 Wireless Network Adapter
+                                 Connection Name: WiFi
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.1.1
+                                 IP address(es)
+                                 [01]: 192.168.1.23
+                                 [02]: fe80::d502:52a:82d2:f80f
+                           [02]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [03]: Bluetooth Device (Personal Area Network)
+                                 Connection Name: Bluetooth Network Connection 3
+                                 Status:          Media disconnected
+                           [04]: VirtualBox Host-Only Ethernet Adapter
+                                 Connection Name: VirtualBox Host-Only Network #4
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.56.1
+                                 [02]: fe80::91d7:eb93:6f91:14a
+                           [05]: VirtualBox Host-Only Ethernet Adapter
+                                 Connection Name: VirtualBox Host-Only Network #5
+                                 DHCP Enabled:    No
+                                 IP address(es)
+                                 [01]: 192.168.181.2
+                                 [02]: fe80::25ed:5689:ac34:d806
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes
+						   
+----- 8. tree -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> tree
+Folder PATH listing
+Volume serial number is A07E-7AAA
+C:.
+No subfolders exist
+
+----- 9. tscon ------
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> tscon
+Invalid parameter(s)
+Attaches a user session to a remote desktop session.
+
+TSCON {sessionid | sessionname} [/DEST:sessionname]
+        [/PASSWORD:pw | /PASSWORD:*] [/V]
+
+  sessionid          The ID of the session.
+  sessionname        The name of the session.
+  /DEST:sessionname  Connect the session to destination sessionname.
+  /PASSWORD:pw       Password of user owning identified session.
+  /V                 Displays information about the actions performed.
+  
+----- 10. tskill -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> tskill
+Invalid parameter(s)
+Ends a process.
+
+TSKILL processid | processname [/SERVER:servername] [/ID:sessionid | /A] [/V]
+
+  processid           Process ID for the process to be terminated.
+  processname         Process name to be terminated.
+  /SERVER:servername  Server containing processID (default is current).
+                         /ID or /A must be specified when using processname
+                         and /SERVER
+  /ID:sessionid       End process running under the specified session.
+  /A                  End process running under ALL sessions.
+  /V                  Display information about actions being performed.
+  
+----- 11. timeout ------
+ timeout
+ERROR: Invalid syntax.
+Type "TIMEOUT /?" for usage.
+
+----- 12. set -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> set
+
+cmdlet Set-Variable at command pipeline position 1
+Supply values for the following parameters:
+Name[0]:
+
+----- 13. quser -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> quser
+ USERNAME              SESSIONNAME        ID  STATE   IDLE TIME  LOGON TIME
+>aldi                  console             3  Active          1  9/22/2019 4:41 AM
+
+----- 14. qwinsta -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> qwinsta
+ SESSIONNAME       USERNAME                 ID  STATE   TYPE        DEVICE
+ services                                    0  Disc
+                                             1  Down
+>console           Aldi                      3  Active
+
+----- 15. pathping -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> pathping
+
+Usage: pathping [-g host-list] [-h maximum_hops] [-i address] [-n]
+                [-p period] [-q num_queries] [-w timeout]
+                [-4] [-6] target_name
+
+Options:
+    -g host-list     Loose source route along host-list.
+    -h maximum_hops  Maximum number of hops to search for target.
+    -i address       Use the specified source address.
+    -n               Do not resolve addresses to hostnames.
+    -p period        Wait period milliseconds between pings.
+    -q num_queries   Number of queries per hop.
+    -w timeout       Wait timeout milliseconds for each reply.
+    -4               Force using IPv4.
+    -6               Force using IPv6.
+	
+----- 16. msg -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> msg
+Send a message to a user.
+
+MSG {username | sessionname | sessionid | @filename | *}
+    [/SERVER:servername] [/TIME:seconds] [/V] [/W] [message]
+
+  username            Identifies the specified username.
+  sessionname         The name of the session.
+  sessionid           The ID of the session.
+  @filename           Identifies a file containing a list of usernames,
+                      sessionnames, and sessionids to send the message to.
+  *                   Send message to all sessions on specified server.
+  /SERVER:servername  server to contact (default is current).
+  /TIME:seconds       Time delay to wait for receiver to acknowledge msg.
+  /V                  Display information about actions being performed.
+  /W                  Wait for response from user, useful with /V.
+  message             Message to send.  If none specified, prompts for it
+                      or reads from stdin.
+					  
+----- 17. mode -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> mode
+
+Status for device CON:
+----------------------
+    Lines:          3000
+    Columns:        95
+    Keyboard rate:  31
+    Keyboard delay: 1
+    Code page:      850
+
+----- 18. label -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> label
+Volume in drive C: has no label
+Volume Serial Number is A07E-7AAA
+Volume label (32 characters, ENTER for none)?
+
+----- 19. klist -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> klist
+
+Current LogonId is 0:0x6b4e476
+
+Cached Tickets: (0)
+
+----- 20. hostname -----
+PS C:\praxis-academy\kemampuan-dasar-1\latihan> hostname
+E5-475G
