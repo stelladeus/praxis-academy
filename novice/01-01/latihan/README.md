@@ -30,13 +30,13 @@ url adalah address/path pada gambar tersebut
 
 =============================================================================================================================================================
 
-if (year >= 2001) { // jika year lebih atau sama 
-  print('21st century');
-} else if (year >= 1901) {
-  print('20th century');
+if (year >= 2001) { // jika year lebih dari atau sama dengan 2001 maka ->
+  print('21st century'); //system memberikan output "21st century"
+} else if (year >= 1901) { //jika year lebih dari atau sama dengan 1901 maka ->
+  print('20th century'); // sytem memberikan output "20th century"
 }
 
-for (var object in flybyObjects) {
+for (var object in flybyObjects) { 
   print(object);
 }
 
