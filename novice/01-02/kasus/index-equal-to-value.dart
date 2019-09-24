@@ -1,5 +1,5 @@
 // index equal to value menggunakan binary sort pada array yang sudah di sort sebelumnya
-// belum selesai
+// belum selesai, ada error pada double dan int variabel yang membingungkan
 
 void main() {
   var array = new List();
