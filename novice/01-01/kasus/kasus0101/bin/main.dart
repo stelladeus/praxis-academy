@@ -5,10 +5,6 @@ import 'dart:math';
 // Importing libraries from external packages
 import 'package:test/test.dart';
 
-void main() {
-  print('Hello, World!');
-}
-
 var name = 'Voyager I';
 var year = 1977;
 var antennaDiameter = 3.7;
@@ -18,36 +14,39 @@ var image = {
   'url': '//path/to/saturn.jpg'
 };
 
-if (year>= 2001) {
-  print('21st century');
-} else if (year >= 1901) {
-  print('20th century');
-}
+void main() {
+  print('Hello, World!');
 
-for (var object in flybyObjects) {
-  print(object);
-}
+  if (year >= 2001) {
+    print('21st century');
+  } else if (year >= 1901) {
+    print('20th century');
+  }
 
-for (int month = 1; month <= 12; month++) {
-  print(month);
-}
+  for (var object in flybyObjects) {
+    print(object);
+  }
 
-while (year < 2016) {
-  year += 1;
-}
+  for (int month = 1; month <= 12; month++) {
+    print(month);
+  }
 
-int fibonacci(int n) {
-  if (n == 0 || n == 1) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}
+  while (year < 2016) {
+    year += 1;
+  }
 
-var result = fibonacci(20);
+  int fibonacci(int n) {
+    if (n == 0 || n == 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
+
+  var result = fibonacci(20);
 
 // This is a normal, one-line comment.
 
-/// This is a documentation comment, used to document libraries,
-/// classes, and their members. Tools like IDEs and dartdoc treat
-/// doc comments specially.
+  /// This is a documentation comment, used to document libraries,
+  /// classes, and their members. Tools like IDEs and dartdoc treat
+  /// doc comments specially.
 
 /* Comments like these are also supported. */
-
+}
