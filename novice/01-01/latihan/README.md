@@ -36,14 +36,56 @@ if (year >= 2001) { // jika year lebih dari atau sama dengan 2001 maka ->
   print('20th century'); // sytem memberikan output "20th century"
 }
 
-for (var object in flybyObjects) { 
-  print(object);
+for (var object in flybyObjects) { //mengiterasi array flybyObjects
+  print(object); //mprint isi dari object dari index array pertama hingga akhir
 }
 
-for (int month = 1; month <= 12; month++) {
+for (int month = 1; month <= 12; month++) { 
   print(month);
 }
 
-while (year < 2016) {
-  year += 1;
+//perulangan dengan nilai awal bernilai '1', perulangan hanya dilakukan saat kondisi month kurang dari atau sama dengan 12, 
+//disetiap perulangannya dilakukan increment nilai month 
+
+while (year < 2016) { //perulangan akan dilakukan terus menerus ketika kondisi year kurang dari 2016
+  year += 1; // disetiap perulangannya dilakukan kalkulasi year = year + 1
 }
+
+=============================================================================================================================================================
+
+int fibonacci(int n) { //fungsi memiliki nama fibonacci yang membutuhkan argumen/parameter berupa tipe data integer
+  if (n == 0 || n == 1) return n; //jika parameter sama dengan nol atau parameter sama dengan 1, maka fungsi akan mereturn nilai parameter tersebut
+  return fibonacci(n - 1) + fibonacci(n - 2); //jika tidak memiliki kondisi diatas, maka fungsi akan mereturn hasil dari fungsi fibonacci sendiri(recursive)
+}// dengan parameter fibonacci(n - 1) + fibonacci(n - 2)
+var result = fibonacci(20); //var result menghasil fungsi dari fibonacci
+
+=============================================================================================================================================================
+
+flybyObjects.where(
+(name) => name.contains('turn')
+).forEach(print);
+
+// => adalah penulisan syntax dimana berarti single statement
+//jika array flybyObjects memiliki element yang memiliki kata 'turn' didalamnya, maka element tersebut diprint
+
+=============================================================================================================================================================
+
+// This is a normal, one-line comment.
+
+/// This is a documentation comment, used to document libraries,
+/// classes, and their members. Tools like IDEs and dartdoc treat
+/// doc comments specially.
+
+/* Comments like these are also supported. */
+
+macam macam dari tipe cara meng-koment 
+// adalah single line comment
+/// adalah untuk dokumentasi, biasa digunakan untuk menjelaskan library maupun classes
+/* isi komen */ biasa digunakan untuk mengkomen paragraf yang lebih dari satu baris
+=============================================================================================================================================================
+
+// Importing core libraries
+import 'dart:math';
+
+kita bisa mengimport suatu file, fungsi, ataupun class dari file lain dan menggunakan fungsi atau kelas dari file tersebut tanpa harus secara manual
+menambahkan ke dalam proyek kita
