@@ -1,11 +1,11 @@
 void main() {
   var iniArray = [9, 7, 3, 4, 5, 6];
 
-  minMax(iniArray);
+  print(minMax(iniArray).toString());
 
 }
 
-void minMax(List<int> array)
+List<int> minMax(List<int> array)
 {
   var min=array[0];
   var max=array[0];
@@ -18,6 +18,7 @@ void minMax(List<int> array)
   }
 
   // print('min: '+ min + 'max: ' + max);
-  print(min);
-  print(max);
+  return([min,max]);
+  //print(max);
+  
 }
