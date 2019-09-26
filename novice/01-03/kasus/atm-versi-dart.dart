@@ -36,7 +36,6 @@ main(){
       case '3':
       atm.checkBalance();
       // print('check balance');
-
       // ATMMachine.checkBalance();
       break;
 
