@@ -13,7 +13,7 @@ class GenericClass<T>{
   }
 
   void showType(){
-    print("Type of T is: " + ob.class.toString());
+    print("Type of T is: " + ob.toString());
   }
 
   T getData()
@@ -21,7 +21,7 @@ class GenericClass<T>{
     return this.ob;
   }
 
-  set(T datayangdiset){
-    this.ob = datayangdiset;
+  set(T input){
+    this.ob = input;
   }
 }
